@@ -87,17 +87,11 @@ resource_fields:
   label: Format
   preset: resource_format_autocomplete
 
-# ----------------------------
-# ✅ SCHEMA PROOF FIELD (TEST)
-# ----------------------------
 - field_name: restricted_schema_test
   label: "SCHEMA TEST FIELD (If you see this, scheming is active ✅)"
   help_text: "This field exists only to prove the scheming schema is being used."
   preset: text
 
-# --------------------------------
-# ✅ RESTRICTED ACCESS (THE REAL UI)
-# --------------------------------
 - field_name: restricted
   label: "Access Restriction"
   help_text: "Choose who can access this resource. (Provided by ckanext-restricted)"
