@@ -1,5 +1,5 @@
 dataset_type: dataset
-about: A reimplementation of the default CKAN dataset schema + restricted resources
+about: Default CKAN dataset schema extended with restricted resources
 about_url: https://github.com/ckan/ckanext-scheming
 
 dataset_fields:
@@ -69,31 +69,46 @@ resource_fields:
   preset: resource_format_autocomplete
 
 
-# RESTRICTED BLOCK
+# -------------------------------------------------------
+# TEST FIELD (Remove later — proves scheming works)
+# -------------------------------------------------------
+
+- field_name: restricted_schema_test
+  label: "SCHEMA TEST FIELD (Scheming is active ✅)"
+  preset: text
+  help_text: "If this field appears, scheming schema is loaded correctly."
+
+
+# -------------------------------------------------------
+# RESTRICTED ACCESS BLOCK
+# -------------------------------------------------------
 
 - field_name: restricted
-  label: "Access Restriction"
-  help_text: "Choose who can access this resource."
+  label: Access Restriction
+  help_text: Choose who can access this resource.
   form_snippet: composite.html
   subfields:
 
     - field_name: level
-      label: Restriction Level
+      label: Level
       preset: select
+      required: true
       form_include_blank_choice: false
       choices:
         - value: public
           label: Public
         - value: registered
-          label: Registered users
-        - value: only_allowed_users
-          label: Only allowed users
+          label: Registered Users
         - value: any_organization
-          label: Any organization member
+          label: Any Organization Members (Trusted Users)
         - value: same_organization
-          label: Same organization member
+          label: Same Organization Members
+        - value: only_allowed_users
+          label: Allowed Users Only
 
     - field_name: allowed_users
       label: Allowed Users
-      preset: user_autocomplete
+      preset: tag_string_autocomplete
+      form_attrs:
+        data-module-source: "/api/2/util/user/autocomplete?q=?"
       validators: ignore_missing restricted_username_from_mail
