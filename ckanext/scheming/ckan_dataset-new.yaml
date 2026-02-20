@@ -69,15 +69,6 @@ resource_fields:
   preset: resource_format_autocomplete
 
 
-# -------------------------------------------------------
-# TEST FIELD (Remove later — proves scheming works)
-# -------------------------------------------------------
-
-- field_name: restricted_schema_test
-  label: "SCHEMA TEST FIELD (Scheming is active ✅)"
-  preset: text
-  help_text: "If this field appears, scheming schema is loaded correctly."
-
 
 # -------------------------------------------------------
 # RESTRICTED ACCESS BLOCK
