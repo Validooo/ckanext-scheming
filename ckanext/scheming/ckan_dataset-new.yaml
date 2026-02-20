@@ -68,12 +68,6 @@ resource_fields:
   label: Format
   preset: resource_format_autocomplete
 
-# TEST FIELD (proves scheming is active)
-
-- field_name: restricted_schema_test
-  label: "SCHEMA TEST FIELD (If you see this, scheming is active ✅)"
-  preset: text
-  help_text: "If this field appears in resource edit form, scheming works."
 
 # RESTRICTED BLOCK
 
