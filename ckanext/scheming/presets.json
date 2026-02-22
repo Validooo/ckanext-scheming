@@ -71,7 +71,15 @@
       }
     },
 
-    // --- additional presets kept from your second file ---
+    {
+      "preset_name": "composite",
+      "values": {
+        "validators": "ignore_missing",
+        "form_snippet": "composite.html",
+        "display_snippet": "composite.html"
+      }
+    },
+
     {
       "preset_name": "text",
       "values": {
