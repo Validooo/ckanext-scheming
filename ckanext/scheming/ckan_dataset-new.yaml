@@ -2,7 +2,6 @@ dataset_type: dataset
 about: A reimplementation of the default CKAN dataset schema
 about_url: https://github.com/ckan/ckanext-scheming
 
-
 dataset_fields:
 
 - field_name: title
