@@ -3,15 +3,16 @@
   "about": "these are the default scheming field presets",
   "about_url": "http://github.com/ckan/ckanext-scheming#preset",
   "presets": [
-
     {
       "preset_name": "title",
       "values": {
         "validators": "if_empty_same_as(name) unicode_safe",
-        "form_snippet": "large_text.html"
+        "form_snippet": "large_text.html",
+        "form_attrs": {
+          "data-module": "slug-preview-target"
+        }
       }
     },
-
     {
       "preset_name": "dataset_slug",
       "values": {
@@ -19,14 +20,19 @@
         "form_snippet": "slug.html"
       }
     },
-
     {
       "preset_name": "tag_string_autocomplete",
       "values": {
-        "validators": "ignore_missing tag_string_convert"
+        "validators": "ignore_missing tag_string_convert",
+        "classes": ["control-full"],
+        "form_attrs": {
+          "data-module": "autocomplete",
+          "data-module-tags": "",
+          "data-module-source": "/api/2/util/tag/autocomplete?incomplete=?",
+          "class": ""
+        }
       }
     },
-
     {
       "preset_name": "dataset_organization",
       "values": {
@@ -34,22 +40,28 @@
         "form_snippet": "organization.html"
       }
     },
-
     {
       "preset_name": "resource_url_upload",
       "values": {
         "validators": "ignore_missing unicode_safe remove_whitespace",
-        "form_snippet": "upload.html"
+        "form_snippet": "upload.html",
+        "form_placeholder": "http://example.com/my-data.csv",
+        "upload_field": "upload",
+        "upload_clear": "clear_upload",
+        "upload_label": "File"
       }
     },
-
     {
       "preset_name": "resource_format_autocomplete",
       "values": {
-        "validators": "if_empty_guess_format ignore_missing clean_format unicode_safe"
+        "validators": "if_empty_guess_format ignore_missing clean_format unicode_safe",
+        "form_placeholder": "eg. CSV, XML or JSON",
+        "form_attrs": {
+          "data-module": "autocomplete",
+          "data-module-source": "/api/2/util/resource/format_autocomplete?incomplete=?"
+        }
       }
     },
-
     {
       "preset_name": "select",
       "values": {
@@ -59,6 +71,7 @@
       }
     },
 
+    // --- additional presets kept from your second file ---
     {
       "preset_name": "text",
       "values": {
@@ -67,7 +80,6 @@
         "display_snippet": "text.html"
       }
     },
-
     {
       "preset_name": "user_autocomplete",
       "values": {
