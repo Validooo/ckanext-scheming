@@ -93,7 +93,6 @@ resource_fields:
   help_text: "Choose who can access this resource. (Provided by ckanext-restricted)"
   preset: composite
   subfields:
-
     - field_name: level
       label: Restriction Level
       preset: select
