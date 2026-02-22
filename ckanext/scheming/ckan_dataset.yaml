@@ -116,6 +116,8 @@ resource_fields:
 
     - field_name: allowed_users
       label: Allowed Users
-      help_text: "Start typing a username. Separate multiple users with commas."
-      preset: user_autocomplete
+      preset: tag_string_autocomplete
       validators: ignore_missing restricted_username_from_mail
+      form_attrs:
+        data-module-source: "/api/2/util/user/autocomplete?q=?"
+
