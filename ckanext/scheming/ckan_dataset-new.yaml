@@ -87,7 +87,7 @@ resource_fields:
 
 - field_name: format
   label: Format
-  preset: resource_format_autocompleteresource_format_autocomplete
+  preset: resource_format_autocomplete
 
 
 
