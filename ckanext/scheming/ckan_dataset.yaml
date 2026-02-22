@@ -1,5 +1,5 @@
 dataset_type: dataset
-about: A reimplementation of the default CKAN dataset schema + restricted resources
+about: A reimplementation of the default CKAN dataset schema
 about_url: https://github.com/ckan/ckanext-scheming
 
 dataset_fields:
@@ -68,6 +68,7 @@ dataset_fields:
   display_snippet: email.html
   display_email_name_field: maintainer
 
+
 resource_fields:
 
 - field_name: url
@@ -87,17 +88,11 @@ resource_fields:
   label: Format
   preset: resource_format_autocomplete
 
-- field_name: restricted_schema_test
-  label: "SCHEMA TEST FIELD (If you see this, scheming is active ✅)"
-  help_text: "This field exists only to prove the scheming schema is being used."
-  preset: text
-
 - field_name: restricted
   label: "Access Restriction"
   help_text: "Choose who can access this resource. (Provided by ckanext-restricted)"
   preset: composite
   subfields:
-
     - field_name: level
       label: Restriction Level
       preset: select
@@ -120,4 +115,3 @@ resource_fields:
       validators: ignore_missing restricted_username_from_mail
       form_attrs:
         data-module-source: "/api/2/util/user/autocomplete?q=?"
-
