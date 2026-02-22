@@ -89,8 +89,7 @@ resource_fields:
   label: Format
   preset: resource_format_autocomplete
 
-
-  - field_name: restricted
+- field_name: restricted
   label: "Access Restriction"
   help_text: "Choose who can access this resource. (Provided by ckanext-restricted)"
   preset: composite
